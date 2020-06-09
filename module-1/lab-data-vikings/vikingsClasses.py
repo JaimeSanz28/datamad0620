@@ -1,4 +1,6 @@
 
+import random
+
 # Soldier
 
 class Soldier:
@@ -40,7 +42,6 @@ class Saxon(Soldier):
 
     def receiveDamage(self, damage):
          super().receiveDamage
-         self.health -= damage
          if self.health > 0:
              return f"A Saxon has received {damage} points of damage"
          else: 
@@ -49,29 +50,27 @@ class Saxon(Soldier):
 
 # War
 
-import random
-
 class War:
     def __init__(self):
         self.vikingArmy = []
         self.saxonArmy = []
 
-    def addViking(self, Viking):
-        self.vikingArmy.append(Viking)
+    def addViking(self, vik):
+        self.vikingArmy.append(vik)
 
-    def addSaxon(self, Saxon):
-        self.saxonArmy.append(Saxon)
+    def addSaxon(self, sax):
+        self.saxonArmy.append(sax)
 
     def vikingAttack(self):
-        Saxon_random = random.random(self.saxonArmy)
-        Saxon.receiveDamage() = Viking.strength()
-        if Saxon.health < 0:
+        saxon_random = random.random(self.saxonArmy)
+        vikatt = sax.receiveDamage(vik.strength)
+        if Saxon.health <= 0:
             self.saxonArmy.remove(self.Saxon)
 
     def saxonAttack(self):
-        Viking_random = random.random(self.vikingArmy)
-        Viking.receiveDamage() = Saxon.strength()
-        if Viking.health < 0:
+        viking_random = random.random(self.vikingArmy)
+        saxatt = vik.receiveDamage(sax.strength)
+        if Viking.health <= 0:
             self.vikingArmy.remove(self.Viking)
 
 
